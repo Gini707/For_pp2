@@ -1,1 +1,0 @@
-i added examples from w3school 
