@@ -1,13 +1,15 @@
 # enumerate example
 names = ["Alice", "Bob", "Charlie"]
 
-for i, name in enumerate(names):
-    print(i, name)
+print("Enumerate example:")
+for index, name in enumerate(names):
+    print(index, name)
 
 print()
 
 # zip example
-numbers = [1, 2, 3]
+numbers = [10, 20, 30]
 
-for name, num in zip(names, numbers):
-    print(name, num)
+print("Zip example:")
+for name, number in zip(names, numbers):
+    print(name, number)
