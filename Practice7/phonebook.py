@@ -116,3 +116,46 @@ def delete_contact_by_phone(phone):
     cur.close()
     conn.close()
 
+def delete_contact_by_phone(phone):
+    conn = connect()
+    cur = conn.cursor()
+    cur.execute(
+        "DELETE FROM phonebook WHERE phone = %s",
+        (phone,)
+    )
+    conn.commit()
+    cur.close()
+    conn.close()
+
+
+# 👇 ВОТ СЮДА ДОБАВЛЯЕШЬ
+if __name__ == "__main__":
+    create_table()
+    
+    while True:
+        print("\n1. Add contact")
+        print("2. Show contacts")
+        print("3. Search by name")
+        print("4. Delete contact")
+        print("5. Exit")
+
+        choice = input("Choose: ")
+
+        if choice == "1":
+            name = input("Enter name: ")
+            phone = input("Enter phone: ")
+            insert_contact(name, phone)
+
+        elif choice == "2":
+            show_contacts()
+
+        elif choice == "3":
+            name = input("Enter name: ")
+            search_by_name(name)
+
+        elif choice == "4":
+            name = input("Enter name: ")
+            delete_contact_by_name(name)
+
+        elif choice == "5":
+            break
