@@ -116,29 +116,3 @@ def delete_contact_by_phone(phone):
     cur.close()
     conn.close()
 
-
-# 🔥 ТЕСТ (для демонстрации)
-create_table()
-
-insert_contact("Rassul", "87772512051")
-
-insert_from_csv("contacts.csv")
-
-print("ALL CONTACTS:")
-show_contacts()
-
-print("SEARCH NAME:")
-search_by_name("Rassul")
-
-print("SEARCH PREFIX:")
-search_by_prefix("8777")
-
-update_contact("Rassul", "87000000000")
-
-print("AFTER UPDATE:")
-show_contacts()
-
-delete_contact_by_name("Rassul")
-
-print("AFTER DELETE:")
-show_contacts()
